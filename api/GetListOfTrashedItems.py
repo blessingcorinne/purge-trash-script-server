@@ -20,8 +20,12 @@ class GetListOfTrashedItems:
         self.api = APICallsClass(base_url=self.url, username=self.username, password=self.password)
     def get_list_of_deleted_objects(self):
         """
-        This function sends a GET request to receive a json with all objects in the trash and saves it as a list
-        :return: list of objects currently available in the trash
+        This function sends two GET requests to receive a list of trashed pages in trash AND a list of trashed blogposts
+        in trash. Today, there is no possibility to get attachments in trash.
+        The response of each GET request is saved in a separate json. After that, the id is extracted and saved in a list.
+        Both single lists (one containing ids of all pages, one containing ids of all blogposts) are merged in a single list.
+
+        :return: list of pages and blogposts currently available in the trash by id
         """
 
         try:
@@ -44,7 +48,8 @@ class GetListOfTrashedItems:
 
 
 
-
+#TODO make spacekey editable
+#TODO make endpoint editable
 
         except HTTPError as err:
             self.log.error(f"Error in function get_list_of_deleted_objects: {err}")

@@ -20,7 +20,7 @@ class Delete_Trashed_Pages_And_Blogposts:
         try:
 
             request_call = self.api.delete(endpoint)
-            print(request_call.status_code)
+            print(f"Sucessfully deleted with statuscode: {request_call.status_code}")
         except HTTPError as err:
             self.log.error(f"Error in function get_list_of_deleted_objects: {err}")
             exit(1)

@@ -2843,3 +2843,26 @@ INFO:__main__:Start GET request to fetch list of trashed items in trash
 14:06:33,100 __main__ INFO []
 14:06:33,100 __main__ INFO list of trashed pages and blogposts: []
 14:06:33,100 __main__ INFO list of trashed pages and blogposts after calling delete_trashed_pages_and_blogposts: []
+09:20:33,451 __main__ INFO data loaded
+09:20:33,452 __main__ INFO Start GET request to fetch list of trashed items in trash
+09:20:33,452 __main__ INFO Initialize GET request
+09:20:33,464 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): bosch-maria-confluence.dev.anarcon.net:443
+09:20:33,604 urllib3.connectionpool DEBUG https://bosch-maria-confluence.dev.anarcon.net:443 "GET /rest/api/content?spaceKey=MT&status=trashed HTTP/1.1" 200 None
+09:20:33,624 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): bosch-maria-confluence.dev.anarcon.net:443
+09:20:33,822 urllib3.connectionpool DEBUG https://bosch-maria-confluence.dev.anarcon.net:443 "GET /rest/api/content?spaceKey=MT&status=trashed&type=blogpost HTTP/1.1" 200 None
+09:20:33,838 __main__ INFO ['360601', '360603', '360605']
+09:20:33,838 __main__ INFO ['360607']
+09:20:33,838 __main__ INFO list of trashed pages and blogposts: ['360607', '360601', '360603', '360605']
+09:20:33,840 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): bosch-maria-confluence.dev.anarcon.net:443
+09:20:34,56 urllib3.connectionpool DEBUG https://bosch-maria-confluence.dev.anarcon.net:443 "DELETE /rest/api/content/360607?status=trashed HTTP/1.1" 204 0
+09:20:34,58 __main__ INFO deleted page with id: 360607 with statuscode:
+09:20:34,61 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): bosch-maria-confluence.dev.anarcon.net:443
+09:20:34,286 urllib3.connectionpool DEBUG https://bosch-maria-confluence.dev.anarcon.net:443 "DELETE /rest/api/content/360601?status=trashed HTTP/1.1" 204 0
+09:20:34,287 __main__ INFO deleted page with id: 360601 with statuscode:
+09:20:34,290 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): bosch-maria-confluence.dev.anarcon.net:443
+09:20:34,507 urllib3.connectionpool DEBUG https://bosch-maria-confluence.dev.anarcon.net:443 "DELETE /rest/api/content/360603?status=trashed HTTP/1.1" 204 0
+09:20:34,509 __main__ INFO deleted page with id: 360603 with statuscode:
+09:20:34,513 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): bosch-maria-confluence.dev.anarcon.net:443
+09:20:34,808 urllib3.connectionpool DEBUG https://bosch-maria-confluence.dev.anarcon.net:443 "DELETE /rest/api/content/360605?status=trashed HTTP/1.1" 204 0
+09:20:34,810 __main__ INFO deleted page with id: 360605 with statuscode:
+09:20:34,811 __main__ INFO list of trashed pages and blogposts after calling delete_trashed_pages_and_blogposts: ['360607', '360601', '360603', '360605']

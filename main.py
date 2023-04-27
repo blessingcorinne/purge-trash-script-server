@@ -78,7 +78,7 @@ if __name__ == '__main__':
         delete_pages = Delete_Trashed_Pages_And_Blogposts(config, log)
         r = delete_pages.delete_trashed_pages_and_blogposts(final_endpoint)
 
-        log.info(f"deleted page with id: {id} with statuscode:")
+        log.info(f"deleted page with id: {id}")
 
 
     log.info(f"list of trashed pages and blogposts after calling delete_trashed_pages_and_blogposts: {list_of_trashed_objects_by_id}")
