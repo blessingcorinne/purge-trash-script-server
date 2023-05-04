@@ -1,0 +1,11 @@
+12:35:30,211 __main__ INFO data loaded
+12:35:30,211 __main__ INFO Start GET request to fetch list of trashed items in trash
+12:35:30,211 __main__ INFO Initialize GET request
+12:35:30,270 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): bosch-maria-confluence.dev.anarcon.net:443
+12:35:31,772 urllib3.connectionpool DEBUG https://bosch-maria-confluence.dev.anarcon.net:443 "GET /rest/api/content?spaceKey=MT&status=trashed HTTP/1.1" 200 None
+12:35:31,777 urllib3.connectionpool DEBUG Starting new HTTPS connection (1): bosch-maria-confluence.dev.anarcon.net:443
+12:35:31,906 urllib3.connectionpool DEBUG https://bosch-maria-confluence.dev.anarcon.net:443 "GET /rest/api/content?spaceKey=MT&status=trashed&type=blogpost HTTP/1.1" 200 None
+12:35:31,907 __main__ INFO []
+12:35:31,907 __main__ INFO []
+12:35:31,908 __main__ INFO list of trashed pages and blogposts: []
+12:35:31,908 __main__ INFO list of trashed pages and blogposts after calling delete_trashed_pages_and_blogposts: []

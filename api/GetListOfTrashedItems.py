@@ -33,17 +33,22 @@ class GetListOfTrashedItems:
             # send two rest calls to get deleted pages and deleted blogposts. Today, there is no endpoint supporting deletion of attachments
             request_call = self.api.get(endpoint='rest/api/content?spaceKey=MT&status=trashed')
             request_call_blogposts = self.api.get(endpoint='rest/api/content?spaceKey=MT&status=trashed&type=blogpost')
+            #request_call_attachments = self.api.get(endpoint='rest/api/content?spaceKey=MT&status=trashed&type=attachment')
             # check if request was successfully by scanning status_code == 200)
             if request_call.status_code & request_call_blogposts.status_code ==200:
                 json_data = json.loads(request_call.content)
                 json_data_blogposts = json.loads(request_call_blogposts.content)
+               # json_data_attachments = json.loads(request_call_attachments.content)
                 trashed_pages_by_id = json_extract(json_data, 'id')
                 trashed_blogposts_by_id = json_extract(json_data_blogposts, 'id')
+              #  trashed_attachments_by_id = json_extract(json_data_attachments, 'id')
                 self.log.info(f"{trashed_pages_by_id}")
                 self.log.info(f"{trashed_blogposts_by_id}")
+                #self.log.info(f"{trashed_attachments_by_id}")
                 trashed_pages_and_blogposts = []
                 trashed_pages_and_blogposts.extend(trashed_blogposts_by_id)
                 trashed_pages_and_blogposts.extend(trashed_pages_by_id)
+               # trashed_pages_and_blogposts.extend(trashed_attachments_by_id)
                 return trashed_pages_and_blogposts
 
 

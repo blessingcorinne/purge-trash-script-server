@@ -23,12 +23,12 @@ def __init__(self, config, log):
 dirpath = os.path.dirname(__file__)
 config_filepath = os.path.join(dirpath, 'config/config.yml')
 
-if not os.path.exists("api/Logs"):
-    os.makedirs("api/Logs")
+if not os.path.exists("logs"):
+    os.makedirs("logs")
 
 
 logging.basicConfig(
-    filename='api/Logs/Log_List_Of_Trashed_Objects',
+    filename='logs/Log_List_Of_Trashed_Objects',
     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
     datefmt='%H:%M:%S',
     filemode='a',
@@ -79,6 +79,7 @@ if __name__ == '__main__':
         r = delete_pages.delete_trashed_pages_and_blogposts(final_endpoint)
 
         log.info(f"deleted page with id: {id}")
+        list_of_trashed_objects_by_id = GetListOfTrashedItems(config=config, log=log).get_list_of_deleted_objects()
 
 
     log.info(f"list of trashed pages and blogposts after calling delete_trashed_pages_and_blogposts: {list_of_trashed_objects_by_id}")

@@ -8,6 +8,7 @@ class Delete_Trashed_Pages_And_Blogposts:
         self.url = config['INSTANCE']['source_url']
         self.username = config['INSTANCE']['username']
         self.password = config['INSTANCE']['password']
+       # self.spacekey = config['SPACEKEY']['spacekey']
 
         self.api = APICallsClass(base_url=self.url, username=self.username, password=self.password)
 
